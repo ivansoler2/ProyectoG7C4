@@ -43,6 +43,14 @@ INSTALLED_APPS = [
     'appG7C4'
 ]
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dplvf7x8x',
+    'API_KEY': '695365786315795',
+    'API_SECRET': 'IOKAy-guxkKDrjPmdZrQ3bIiWR0',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),

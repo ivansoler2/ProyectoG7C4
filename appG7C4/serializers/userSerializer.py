@@ -4,6 +4,17 @@ from appG7C4.models.user import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username','password','name','product','document']
+        fields = [
+            'id',
+            'username',
+            'password',
+            'name',
+            'document', 
+            'email',
+            'city',
+            'address',
+            'phone',
+            'image'
+        ]
 
 

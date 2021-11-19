@@ -32,13 +32,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField('Username',max_length=15,unique=True)
     password = models.CharField('Password', max_length=256)
     name = models.CharField('Name',max_length=50)
-    product = models.CharField('Product',max_length=50)
-    document = models.IntegerField(default=0)
+    document = models.IntegerField('Document', unique=True)
+    email = models.EmailField('Email',max_length=50,unique=True, null=True)
+    city = models.CharField('City',max_length=50,null=True)
+    address = models.CharField('Address',max_length=50, null=True)
+    phone = models.IntegerField('Phone', unique=True, null=True)
+    image = models.ImageField(upload_to='app/users/', null=True, blank=True)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
         self.password = make_password(self.password, some_salt)
         super().save(**kwargs)
+
+    def __str__(self):
+        return f'{self.username} ({self.email})'
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['name', 'document', 'email', 'city', 'address', 'phone']
+
+    objects = UserManager()
 
     objects = UserManager()
     USERNAME_FIELD = 'username'
