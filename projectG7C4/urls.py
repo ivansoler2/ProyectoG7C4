@@ -16,8 +16,6 @@ Including another URLconf
 from django.urls import path
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 from appG7C4 import views
-from appG7C4 import views
-from appG7C4.views import userDetailView
 
 
 urlpatterns = [
@@ -26,6 +24,8 @@ urlpatterns = [
     path('user/', views.UserCreateView.as_view()),
     path('user/list', views.UserListView.as_view()),
     path('user/<str:username>/', views.UserDetailView.as_view()),
+    path('verifyToken/', views.VerifyTokenView.as_view())
+
     
     
 ]
