@@ -24,8 +24,9 @@ urlpatterns = [
     path('user/', views.UserCreateView.as_view()),
     path('user/list', views.UserListView.as_view()),
     path('user/<str:username>/', views.UserDetailView.as_view()),
-    path('verifyToken/', views.VerifyTokenView.as_view())
-
-    
-    
+    path('verifyToken/', views.VerifyTokenView.as_view()),
+    path('productCategory/', views.ProductCategoryListCreateView.as_view()),
+    path('productCategory/<int:pk>/', views.ProductCategoryRetrieveUpdateDestroyView.as_view()),
+    path('publication/', views.PublicationListCreateView.as_view()),
+    path('publication/<int:pk>/', views.PublicationRetrieveUpdateDestroyView.as_view())
 ]

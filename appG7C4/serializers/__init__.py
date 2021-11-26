@@ -1,1 +1,3 @@
 from .userSerializer import UserSerializer
+from .productCategorySerializer import ProductCategorySerializer
+from .publicationSerializer import PublicationSerializer

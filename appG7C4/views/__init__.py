@@ -2,3 +2,5 @@ from .userDetailView import UserDetailView
 from .userCreateView import UserCreateView
 from .userDetailView import UserListView
 from .verifyTokenView import VerifyTokenView
+from .productCategoryView import ProductCategoryListCreateView, ProductCategoryRetrieveUpdateDestroyView
+from .publicationView import PublicationListCreateView, PublicationRetrieveUpdateDestroyView
